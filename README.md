@@ -1,50 +1,62 @@
-# React + TypeScript + Vite
+# About the Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Smart Notes was born out of necessity when Samsung and Apple released AI-powered updates to their native note-taking applications, which weren't supported on the Samsung Tab S6 Lite. Instead of missing out on these innovative features, I decided to build a complete solution from scratch. This project demonstrates that cutting-edge AI note-taking capabilities can be implemented on any device through a web application.
 
-Currently, two official plugins are available:
+## Smart Notes Frontend
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This repository contains the frontend for the Smart Notes application, a project inspired by the AI-powered note-taking features introduced by Samsung and Apple. The backend can be found at [SmartNotes_backend](https://github.com/vikrant500/SmartNotes_api?tab=readme-ov-file).
 
-## Expanding the ESLint configuration
+## Local Setup
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Prerequisites
+- Node.js and npm
+- Git
+- Backend repository set up and running
 
-- Configure the top-level `parserOptions` property like this:
+### Installation Steps
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+1. Clone both repositories in the same parent directory:
+   ```bash
+   git clone [https://github.com/vikrant500/SmartNotes_front-end.git]
+   git clone [https://github.com/vikrant500/SmartNotes_api.git]
+   ```
+   
+   Your directory structure should look like this:
+   ```
+   parent-directory/
+   ├── SmartNotes_frontend/
+   └── SmartNotes_backend/
+   ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. Navigate to the frontend directory:
+   ```bash
+   cd SmartNotes_frontend
+   ```
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Running the Application
+
+1. Start the frontend:
+   ```bash
+   npm run dev
+   ```
+
+2. Start the backend server (in its directory):
+   ```bash
+   python3 main.py
+   ```
+
+The frontend application will start running on `http://localhost:3000`.
+
+## Features
+- Modern, responsive user interface
+- Real-time AI-powered note enhancements
+- Seamless integration with backend API
+- Rich text editing capabilities
+
+## Note
+Ensure the backend server is running before starting the frontend application for full functionality.
